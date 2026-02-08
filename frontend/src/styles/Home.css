@@ -66,3 +66,20 @@ form input[type="submit"] {
 form input[type="submit"]:hover {
   background-color: #0056b3;
 }
+.btn{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin-top: 20px;
+}
+.btn button{
+  height: 30px;
+  border: 1px solid gray;
+  border-radius: 3px;
+}
+.btn button a{
+  text-decoration: none;
+  color: black;
+  font-size: 15px;
+  font-weight: 400;
+}
