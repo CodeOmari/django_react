@@ -78,6 +78,11 @@ function Home() {
                 <br />
                 <input type="submit" value="Submit"></input>
             </form>
+            <div className="btn">
+                <button>
+                    <a href="/logout">Log out</a>
+                </button>
+            </div>
         </div>
     );
 }
