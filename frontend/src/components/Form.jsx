@@ -5,6 +5,8 @@ import { ACCESS_TOKEN, REFRESH_TOKEN } from "../constants";
 import "../styles/Form.css"
 import LoadingIndicator from "./LoadingIndicator";
 
+import { Link } from "react-router-dom"
+
 function Form({ route, method }) {
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
@@ -54,6 +56,10 @@ function Form({ route, method }) {
             <button className="form-button" type="submit">
                 {name}
             </button>
+            
+            {
+                method === 'login' && ( <Link to="/register" className="register-link">Need an account? Sign up now.</Link> )
+            }
         </form>
     );
 }
