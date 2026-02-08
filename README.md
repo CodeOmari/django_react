@@ -1,1 +1,1 @@
-## A simple Django & React project
+## A simple notes app built with Django Rest Framework and React
