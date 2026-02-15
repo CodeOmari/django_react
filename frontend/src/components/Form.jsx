@@ -37,7 +37,10 @@ function Form({ route, method }) {
 
     return (
         <form onSubmit={handleSubmit} className="form-container">
-            <h1>{name}</h1>
+            <div className="title">
+                <h3>NoteNest</h3>
+                <img src="../src/assets/NoteNest.png" alt="icon" />
+            </div>
             <input
                 className="form-input"
                 type="text"
@@ -64,4 +67,4 @@ function Form({ route, method }) {
     );
 }
 
-export default Form
+export default Form;
