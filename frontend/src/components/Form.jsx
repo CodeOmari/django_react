@@ -10,29 +10,75 @@ import Logo from "../assets/NoteNest.png";
 
 function Form({ route, method }) {
     const [username, setUsername] = useState("");
-    const [password, setPassword] = useState("");
+    const [password1, setPassword1] = useState("");
+    const [password2, setPassword2] = useState("");
     const [loading, setLoading] = useState(false);
+
     const navigate = useNavigate();
 
+    const isLogin = method === "login";
     const name = method === "login" ? "Login" : "Register";
 
-    const handleSubmit = async (e) => {
-        setLoading(true);
+     const handleSubmit = async (e) => {
         e.preventDefault();
 
+        const passwordRegex = /^(?=.*[!@#$%^&*(),.?":{}|<>]).{8,}$/;
+
+        if (method === 'register') {
+           if (password1 !== password2) {
+            alert("Passwords do not match");
+            return;
+           }
+
+           if (!passwordRegex.test(password1)) {
+             alert("Password must be at least 8 characters long and include at least one special character");
+             return;
+           }
+    }
+
+        setLoading(true);
+
         try {
-            const res = await api.post(route, { username, password })
-            if (method === "login") {
-                localStorage.setItem(ACCESS_TOKEN, res.data.access);
-                localStorage.setItem(REFRESH_TOKEN, res.data.refresh);
-                navigate("/")
-            } else {
-                navigate("/login")
-            }
+        let payload;
+
+        if (method === 'login') {
+            payload = { 
+            username, 
+            password: password1,
+            };
+        } else {
+            payload = { 
+            username, 
+            password1, 
+            password2, 
+            };
+        }
+
+        const res = await api.post(route, payload);
+
+        if (method === "login") {
+            localStorage.setItem(ACCESS_TOKEN, res.data.access);
+            localStorage.setItem(REFRESH_TOKEN, res.data.refresh);
+            navigate("/");
+        } else {
+            alert("Account created successfully! Please log in.");
+            navigate("/login");
+        }
         } catch (error) {
-            alert('Incorrect username or password');
+            if (method === "login") {
+                alert("Incorrect username or password");
+            } else {
+                if (error.response && error.response.data) {
+                const data = error.response.data;
+
+                const messages = Object.values(data).flat().join("\n");
+                    alert(messages);
+                } else {
+                    alert("Registration failed. Try again.");
+                }
+            }
         } finally {
-            setLoading(false)
+            setLoading(false);
         }
     };
 
@@ -52,10 +98,22 @@ function Form({ route, method }) {
             <input
                 className="form-input"
                 type="password"
-                value={password}
-                onChange={(e) => setPassword(e.target.value)}
+                value={password1}
+                onChange={(e) => setPassword1(e.target.value)}
                 placeholder="Password"
             />
+
+            {method === 'register' && (
+                <input
+                className="form-input"
+                type="password"
+                value={password2}
+                onChange={(e) => setPassword2(e.target.value)}
+                placeholder="Confirm Password"
+                required
+                />
+            )}
+
             {loading && <LoadingIndicator />}
             <button className="form-button" type="submit">
                 {name}
