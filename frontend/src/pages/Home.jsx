@@ -13,8 +13,8 @@ function Home() {
     const navigate = useNavigate();
 
     const handleLogout = () => {
-    localStorage.clear();
-    navigate("/login");
+        localStorage.clear();
+        navigate("/login");
     }
 
     useEffect(() => {
