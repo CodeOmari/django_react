@@ -1,0 +1,94 @@
+@import url('https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    background-color: #fff;
+}
+.app-logo{
+    width: 40px;
+}
+.app-name{
+    font-family: 'Instrument Serif', serif;
+    font-size: 1.8rem;
+    color: #333;
+    margin-bottom: 20px;
+}
+.login{
+    text-decoration: none;
+    border-color: #ccc;
+    font-family: "Inter", sans-serif;
+    font-weight: 400;
+    font-size: 1rem;
+    color: #000;
+    transition: background-color 0.3s ease;
+}
+.login:hover{
+    background-color: #f0f0f0;
+}
+.reminder{
+    background-color: #fff;
+    color: #958381;
+    font-family: "Inter", sans-serif;
+    font-weight: 400;
+    font-size: 0.875rem;
+}
+.text-write{
+    font-family: 'Instrument Serif', serif;
+    font-size: 4rem;
+    font-weight: 400;
+    color: #000000;
+}
+.text-remind{
+    font-family: 'Instrument Serif', serif;
+    font-size: 4rem;
+    font-style: italic;
+    font-weight: 400;
+    color: #D57644;
+}
+.importance{
+    font-family: "Inter", sans-serif;
+    font-size: 1rem;
+    font-weight: 400;
+    color: #666;
+    max-width: 500px;
+}
+.start-writing{
+    background-color: #000;
+    color: #fff;
+    font-family: "Inter", sans-serif;
+    text-decoration: none;
+    transition: opacity 0.15s ease;
+}
+.start-writing:hover{
+    opacity: 0.7;
+}
+.benefit-container{
+    background-color: #fff;
+    box-shadow: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+    border: 0.5px solid #ccc;
+    border-radius: 8px;
+    transition: box-shadow 0.15s ease;
+}
+.benefit-container:hover{
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15)
+}
+.benefit-title{
+    font-family: 'Instrument Serif', serif;
+    font-size: 1.5rem;
+    font-weight: 400;
+    color: #000;
+}
+.benefit-description{
+    font-family: "Inter", sans-serif;
+    color: #666;
+}
+.footer-section{
+    border-top: 1px solid #ccc;
+}
+.footer-text{
+    font-family: "Inter", sans-serif;
+    color: #666;
+    font-size: 0.9rem;
+}
