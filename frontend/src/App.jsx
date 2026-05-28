@@ -20,10 +20,15 @@ export default function App() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route
-          path="/"
-          element={<LandingPage />}
-        />
+        <Route path="/" element={<LandingPage />}/>
+        <Route 
+          path="/notes" 
+          element = {
+            <ProtectedRoute>
+              <Notes />
+            </ProtectedRoute>
+          } 
+          />
         <Route path="/login" element={<Login />} />
         <Route path="/logout" element={<Logout />} />
         <Route path="/register" element={<RegisterAndLogout />} />
