@@ -13,12 +13,6 @@ export default function Notes() {
     const [search, setSearch] = useState("");
     const [showForm, setShowForm] = useState(false);
 
-    const handleLogout = () => {
-        localStorage.removeItem(ACCESS_TOKEN);
-        localStorage.removeItem(REFRESH_TOKEN);
-        navigate("/");
-    };
-
 
     useEffect(() => {
         getUser();
@@ -128,10 +122,10 @@ export default function Notes() {
                             )}
                         </div>
                         <div className='login-btn'>
-                            <button onClick={handleLogout} className='login rounded-pill pt-2 pb-2 ps-3 pe-3 border border-1'>
+                            <Link to='/logout' className='login rounded-pill pt-2 pb-2 ps-3 pe-3 border border-1'>
                                 <img src={Logout} alt="logout icon" className="img-fluid pe-1 logout" />
                                 Sign out
-                            </button>
+                            </Link>
                         </div>
                     </div>
                 </div>
