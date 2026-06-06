@@ -1,5 +1,5 @@
 # NoteNest
-A simple notes app built with Django Rest Framework and React
+A notes app built with Django Rest Framework and React
 
 # Features
 This project contains the following features: User registration and login, Notes creation form, Notes list, Notes update and Note deletion section.
@@ -14,7 +14,7 @@ The following languages are used in this project: HTML, JavaScript(React), CSS a
 5. Change directory to the main folder of the project: `cd ..`
 6. Install virtual environment: `python -m venv venv` or `python3 -m venv venv` - Linux users
 7. Activate virtual environment: `venv\Scripts\activate` or `source venv/bin/activate` - Linux users
-8. Change directory to the backend folder: `cd notes_app`
+8. Change directory to the backend folder: `cd backend`
 9. Install project requirements from the requirements.txt file: `pip install -r requirements.txt`
 10. Run the backend of the project: `python manage.py runserver`
 11. Open a new terminal and navigate to the frontend directory: `cd ..`, `cd frontend`
