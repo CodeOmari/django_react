@@ -13,3 +13,103 @@
     color: #666;
     font-family: "Inter", sans-serif;
 }
+.notes-header h2, .text-notes{
+    font-family: 'Instrument Serif', serif;
+    font-size: 2.9rem
+}
+.text-notes{
+    font-style: italic;
+    color: #D57644;
+}
+.notes-header p{
+    font-family: "Inter", sans-serif;
+    color: #666;
+    margin-top: -8px;
+}
+.search, .note-title, .note-content{
+    border: 1px solid #666;
+    outline: none;
+}
+.search:focus, .note-title:focus, .note-content:focus{
+    border: 1px solid #D57644;
+}
+.search::placeholder{
+    color: #666;
+    padding-left: 1px;
+    font-family: "Inter", sans-serif;
+}
+.search-icon{
+    margin-left: -30px;
+}
+.blank-page{
+    border: 1px dashed #666;
+}
+.blank-page h2{
+    font-family: 'Instrument Serif', serif;
+    color: #000;
+}
+.blank-page p{
+    font-family: "Inter", sans-serif;
+    color: #666;
+    font-size: 0.9rem;
+}
+.note-main{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    backdrop-filter: blur(5px);
+    background: rgba(0, 0, 0, 0.3);
+    z-index: 1000;
+}
+.create-note{
+    background: #fff;
+}
+.create-note h3{
+    font-size: 1.7rem;
+    font-family: "Inter", sans-serif;
+}
+.note-title{
+    font-family: 'Instrument Serif', serif;
+    color: #000;
+    font-size: 1.5rem;
+}
+.note-content{
+    font-family: "Inter", sans-serif;
+    color: #000;
+    font-size: 0.9rem;
+}
+.note-title::placeholder{
+    font-family: 'Instrument Serif', serif;
+    font-size: 1.2rem;
+}
+.note-content::placeholder{
+    font-family: "Inter", sans-serif;
+    font-size: 0.9rem;
+}
+.notes-written{
+    border: 1px solid #ccc;
+    box-shadow: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+    transition: box-shadow 0.15s ease;
+    background-color: #fff;
+}
+.notes-written:hover{
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15)
+}
+.content-section h2{
+    font-family: 'Instrument Serif', serif;
+    font-size: 1.2rem;
+    color: #000;
+    font-weight: 500;
+}
+.content-section p{
+    color: #666;
+    font-family: "Inter", sans-serif;
+    font-size: 0.8rem;
+}
+.note-date{
+    color: #666;
+    font-family: "Inter", sans-serif;
+    font-size: 0.7rem;
+}
