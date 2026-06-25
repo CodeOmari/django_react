@@ -109,25 +109,28 @@ export default function Notes() {
         <div className="container-fluid">
             <div className="container-fluid app-details">
                 <div className="container d-flex align-items-center justify-content-between mt-1">
-                    <div className="d-flex align-items-center justify-content-center">
-                        <img src={Logo} alt="notenest logo" className="img-fluid app-logo" />
-                        <h4 className="app-name mt-3">NoteNest</h4>
+                    
+                    <div className="d-flex align-items-center">
+                    <img src={Logo} alt="notenest logo" className="img-fluid app-logo" />
+                    <h4 className="app-name mt-3">NoteNest</h4>
                     </div>
 
                     
-                    <div className="right-side d-flex align-items-center">
-                        <div className="container email mt-3 me-2">
-                            {user && (
-                                <p>{user.email}</p>
-                            )}
-                        </div>
-                        <div className='login-btn container'>
-                            <Link to='/logout' className='login rounded-pill pt-2 pb-2 ps-3 pe-3 border border-1'>
-                                <img src={Logout} alt="logout icon" className="img-fluid pe-1 logout" />
-                                Sign out
-                            </Link>
-                        </div>
+                    <div className="d-flex align-items-center gap-2">
+                        {user && (
+                            <p className="d-none d-md-block mb-0 me-2 text-truncate" style={{ maxWidth: "200px" }}>
+                            {user.email}
+                            </p>
+                        )}
+                        <Link
+                            to="/logout"
+                            className="login rounded-pill pt-2 pb-2 ps-3 pe-3 border border-1 text-nowrap"
+                        >
+                            <img src={Logout} alt="logout icon" className="img-fluid pe-1 logout" />
+                            Sign out
+                        </Link>
                     </div>
+
                 </div>
             </div>
 
