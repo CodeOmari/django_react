@@ -106,7 +106,7 @@ export default function Notes() {
         note.content.toLowerCase().includes(search.toLowerCase())
     );
     return (
-        <div className="container-fluid">
+        <div className="container-fluid mb-4">
             <div className="container-fluid app-details">
                 <div className="container d-flex align-items-center justify-content-between mt-1">
                     
