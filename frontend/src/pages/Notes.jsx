@@ -6,6 +6,19 @@ import api from "../api";
 import { useEffect, useState } from "react";
 import {Search, Plus, StickyNote, Pencil, Trash2} from "lucide-react";
 
+const formatDate = (dateString) => {
+    if (!dateString) return "";
+    const date = new Date(dateString);
+    return date.toLocaleString("en-US", {
+        month: "short",
+        day: "numeric",
+        year: "numeric",
+        hour: "numeric",
+        minute: "2-digit",
+        hour12: true,
+    });
+};
+
 export default function Notes() {
     const [user, setUser] = useState(null);
     const [notes, setNotes] = useState([]);
@@ -177,27 +190,36 @@ export default function Notes() {
                 <div className="container">
                     <div className="row">
                         {filteredNotes.map((note) => (
-                            <div className="col-12 col-sm-4 col-lg-4 notes-written d-flex justify-content-between mt-4 rounded p-2 me-3">
-                                <div className="content-section">
-                                    <h2>{note.title}</h2>
+                            <div className="col-12 col-sm-4">
+                                <div className="notes-written mt-4 rounded p-2">
+                                    <div className="d-flex">
+                                        <div className="content-section">
+                                            <h2>{note.title}</h2>
 
-                                    <p>
-                                        {note.content}
-                                    </p>
+                                            <p>
+                                                {note.content}
+                                            </p>
 
-                                    <small className="note-date">
-                                        {note.date}
-                                    </small>
-                                </div>
+                                        </div>
 
-                                <div className="features d-flex align-items-start">
-                                    <button className="btn btn-light rounded-circle" onClick={() => handleEdit(note)}>
-                                        <Pencil size={14} color="blue" />
-                                    </button>
+                                        <div className="features d-flex align-items-start">
+                                            <button className="btn btn-light rounded-circle" onClick={() => handleEdit(note)}>
+                                                <Pencil size={14} color="blue" />
+                                            </button>
 
-                                    <button className="btn btn-light rounded-circle" onClick={() => deleteNote(note.id)}>
-                                        <Trash2 size={14} color="red" />
-                                    </button>
+                                            <button className="btn btn-light rounded-circle" onClick={() => deleteNote(note.id)}>
+                                                <Trash2 size={14} color="red" />
+                                            </button>
+                                        </div>
+                                    </div>
+
+                                    <div className="date-container">
+                                        <small className="note-date">
+                                            {note.updated_at && note.updated_at !== note.created_at
+                                                ? `updated at ${formatDate(note.updated_at)}`
+                                                : `created at ${formatDate(note.created_at)}`}
+                                        </small>
+                                    </div>
                                 </div>
                             </div>
                         ))}
